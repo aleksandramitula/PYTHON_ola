@@ -1,3 +1,4 @@
+# cwiczenie 1
 imie = "Ola"
 nazwisko = "Mitula"
 print('witaj',imie,nazwisko)
