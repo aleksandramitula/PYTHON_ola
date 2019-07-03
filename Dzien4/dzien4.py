@@ -83,10 +83,36 @@
 # print(new)
 
 
+# # 4. KOPIOWANIE ZAGNIEZDZONYCH LIST - GLEBOKIE KOPIOWANIE
+#
+# #  Zagniezdzona lista - copy() kopiuje tylko zewnetrzna liste, czyli ten pierwszy z brzegu [], wiec zmiany w srodkowej beda widoczne takze w starej liscie
+#
+# nested_list=[[1,2,3]]
+# new_list=nested_list.copy()
+#
+# nested_list[0][1] = 36
+#
+# print(nested_list)
+# print(new_list)
+#
+#
+#
+# # do kopiowania glebokiego sluzy MODUL COPY
+#
+# import copy
+# nested_list=[[1,2,3]]
+# new_list=copy.deepcopy(nested_list)
+#
+# nested_list[0][1] = 36
+#
+# print(nested_list)
+# print(new_list)
 
-# 4. Stworzyc dwie listy o takiej samej dlugosci, ale o roznych liczbach. Stworzyc trzecia liste, ktora doda obie wartosci z list poprzednich na tym samym indeksie
 
-list_one=list(range(1,9))
+
+# 5. Stworzyc dwie listy o takiej samej dlugosci, ale o roznych liczbach. Stworzyc trzecia liste, ktora doda obie wartosci z list poprzednich na tym samym indeksie
+
+list_one=list(range(1,10))
 list_two=list(range(10,19))
 list_tree=[]
 
@@ -97,4 +123,3 @@ for element_a, element_b in zip(list_one, list_two):
 print(list_one)
 print(list_two)
 print(list_tree)
-
