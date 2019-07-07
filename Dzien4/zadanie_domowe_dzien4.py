@@ -9,18 +9,28 @@
 # funkcja1(1,2,3,4,5,18)
 #
 # # 5. Zmodyfikuj funkcje z zadania wyzej tak, aby na koncu wypisala sume liczb podanych do funckji
-
-def funkcja2(*argv):
-    for element in argv:
-        print(element)
-    suma=sum(argv)
-    print(f"suma: {suma}")
-
-funkcja2(1,2,3,4,5)
-
 #
+# def funkcja2(*argv):
+#     for element in argv:
+#         print(element)
+#     suma=sum(argv)
+#     print(f"suma: {suma}")
+#
+# funkcja2(1,2,3,4,5)
+
+
 # # 6. Inside - out - napisz dwie funckje - dodawanie (np o nazwie add) oraz mnozenie dwoch liczb (np o nazwie multiply), nastapnie wywolaj operację
 # # multiply(add(2, 6), 2)
+#
+# def add(*argv):
+#     suma=sum(argv)
+#     return suma
+#
+# def multiply(suma,liczba):
+#     print(suma*liczba)
+#
+# multiply(add(1,2),2)
+
 #
 # def add(first_number, second_number):
 #   """
@@ -31,15 +41,38 @@ funkcja2(1,2,3,4,5)
 #   """
 #   return first_number + second_number
 #
-# # 7. Napisz funkcję rozbijajaca zdanie na slowa (ma zwracac liste ze slowami) oraz funkcje sortujaca liste slow, nastepnie wywolaj sortowanie na slowach podanego przez uzytkownika zdania
+# # 7. Napisz funkcję rozbijajaca zdanie na slowa (ma zwracac liste ze slowami) oraz funkcje sortujaca liste slow,
+# nastepnie wywolaj sortowanie na slowach podanego przez uzytkownika zdania
 #
-# sort_words(split_sentence_to_words(sentence))
+# def rozbijanie_zdania(zdanie):
+#     wyrazy=zdanie.split()
+#     return wyrazy
+#
+# def sortowanie(wyrazy):
+#     wyrazy.sort()
+#     print(wyrazy)
+#
+# sortowanie(rozbijanie_zdania("to zdanie jest dlugie niczym rzeka wijaca sie przez nasz kraj"))
+
 #
 # # 8 (optional) Zaimportuj modul (plik) i uzyj funkcji z tego modulu
 # #  help(nazwa_pliku) - zadokumentuj troche kodu!
+
+# import split_sort
 #
+# lista=split_sort.rozbijanie_zdania("halo halo hej czesc siemka czolem witam")
 #
+# split_sort.sortowanie(lista)
 #
+# print("\n\r\n\r HELP:\n\r")
+# help(split_sort)
+
+
+
+
+########################################################################################################################
+
+
 #
 # # zadania dodatkowe
 #
@@ -47,23 +80,24 @@ funkcja2(1,2,3,4,5)
 # # Przeczytac https://realpython.com/python-string-formatting/#3-string-interpolation-f-strings-python-36
 #
 #
-#
 # # WSKAZÓWKI: nie musisz robić całego zadania na raz - rozbij sobie bardziej skomplikowane zadania na jak najmniejsze
 # # czesci, testuj i powiekszaj
 #
 # # 1 stwórz kilka zmiennych różnych typów - int, float, boolean, string
 #
-# int_variable = 35
-#
+int=35
+flo=20.5
+boo=True
+str='Witaj'
+
 # # 2 za pomocą funkcji print() wypisz wartości powyższych zmiennych, podając ich typ (użyj funkcji type)
 # # pamiętaj o formatowaniu i znakach specjalnych, najlepiej aby pokazywać wartości wraz z typami zmiennych
 # # w nowej linii
-#
-# # przykład:
-# # Zmienna o wartości 35 jest typu int
-# # Zmienna o wartości 47.5 jest typu ...
-# # itd...
-#
+
+
+print(f"Zmienna {int} - typ {type(int)}\r\nZmienna {flo} - typ {type(flo)}\r\nZmienna {boo} - typ {type(boo)}\r\nZmienna {str} - typ {type(str)}")
+
+
 # # pamiętaj o możliwości specjalnego formatowania tzw. interpolacji:
 # # https://realpython.com/python-string-formatting/#3-string-interpolation-f-strings-python-36
 #
