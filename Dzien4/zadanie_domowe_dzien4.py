@@ -28,9 +28,9 @@ def add(*argv):
     return suma
 
 def multiply(suma,liczba):
-    print(suma*liczba)
+    return suma*liczba
 
-multiply(add(2,6),2)
+print(multiply(add(2,6),2))
 
 
 # 7. Napisz funkcję rozbijajaca zdanie na slowa (ma zwracac liste ze slowami) oraz funkcje sortujaca liste slow,
@@ -44,9 +44,9 @@ def rozbijanie_zdania(zdanie):
 
 def sortowanie(wyrazy):
     wyrazy.sort()
-    print(wyrazy)
+    return wyrazy
 
-sortowanie(rozbijanie_zdania(zdanie))
+print(sortowanie(rozbijanie_zdania(zdanie)))
 
 
 # 8 (optional) Zaimportuj modul (plik) i uzyj funkcji z tego modulu
