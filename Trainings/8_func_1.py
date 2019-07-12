@@ -1,0 +1,1 @@
+# napisz funkcje obliczajaca pole kwadratu
