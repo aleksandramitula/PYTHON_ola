@@ -64,6 +64,108 @@
 
 
 
+##Trainings/4_for_loops_ex.py
+
+# # obl. ilość l. parzystych i nieparzystych w zakresie
+#
+# zakres = range(23746)
+#
+# parzyste = 0
+# nieparzyste = 0
+#
+# for liczba in zakres:
+#     if liczba%2==0:
+#         parzyste+=1
+#     elif liczba%2!=0:
+#         nieparzyste+=1
+# #     tutaj nalezy napisac kod
+#
+# print(f"Liczb parzystych: {parzyste}, liczb nieparzystych: {nieparzyste}")
+
+
+
+##Trainings/5_for_loops.py
+
+# # policz samogloski i spolgloski
+# zdanie = input("Podaj jakieś zdanie: ")
+#
+# samogloski = 0
+# spolgloski = 0
+#
+# lista_samogl = "aeiouyąęó"
+#
+# for litera in zdanie:
+#     if litera in lista_samogl:
+#         samogloski+=1
+#     elif litera.isalpha():
+#         spolgloski+=1
+#
+# print(f"Samoglosek: {samogloski}, spółgłosek: {spolgloski}")
+
+
+
+
+
+##Trainings/6_for_loops.py
+
+# fizz buzz
+# wypisac liczby od 1 do 100 (włącznie)
+# zamiast l. podzielnych przez 3 wypisz Fizz
+# zamiast liczb podzielnych przez 5 wypisz Buzz
+# zamist liczb podzielnych przez 3 i 5 wypisz FizzBuzz
+
+# zakres = range(1, 101)
+#
+# for liczba in zakres:
+#     if (liczba%3==0 and liczba%5==0):
+#         print('FizzBuzz')
+#     elif liczba%3==0:
+#         print('Fizz')
+#     elif liczba%5==0:
+#         print('Buzz')
+#     else:
+#         print(liczba)
+
+
+##Trainings/7_while_loops.py - do dokonczenia
+
+# # program, ktory wypisze liczby (z zakresu 0 do 100) z ciagu Fibonacciego
+# # 0, 1, 1, 2, 3, 5, 8, 13, 21
+# # propozycja uzycia petli while - ale kazde rozwiazanie jest dobre ;)
+#
+#
+# # liczba = range(0, 101)
+#
+# liczba = 0
+#
+#
+# # while liczba in range(0,101):
+# if liczba == 0:
+#     print(0)
+#     liczba+=1
+# elif liczba==1:
+#     print(1)
+#     suma=
+# while liczba in range(0, 101):
+#     print(f"liczba {liczba}")
+#     poprzednia_liczba=liczba
+#     print(f"poprzednia liczba {poprzednia_liczba}")
+#     suma=liczba+poprzednia_liczba
+#     print(f"suma {suma}")
+#
+#     # print(f"poprzednia liczba {poprzednia_liczba}")
+
+
+
+##Trainings/8_func_1.py
+
+# # napisz funkcje obliczajaca pole kwadratu
+#
+# def pole_kwadratu(bok_kwadratu):
+#     pole=bok_kwadratu**2
+#     return pole
+#
+# print(pole_kwadratu(4))
 
 
 
@@ -71,29 +173,31 @@
 
 
 
-# # oraz:
-#
-# # 1 stwórz słownik, którego kluczem będą słowa, natomiast wartością znaczenie tych słów
-# # może być słownik miejskiego slangu ;)
-#
-# # words_dict["kasiora"] = "Opis słowa kasiora"
-#
-# # 2 zapisz prosta zawartosc slownika miejskiego slangu do pliku, w kazdej linii klucz - wartosc
-# # np kasiora - Opis slowa kasiora, w nowej linii nastepna para
-#
-# # 3 zapisz slownik slangu miejskiego do pliku csv, gdzie klucz (slowo) i wartosc (wyjasnienie slowa)
-# # beda oddzielone pionową linią pipe (|) - przyklad zapisu pliku csv w Day6\exercises\cs_example
-#
-# # 4 zapisz slownik slangu miejskiego jako pickle - przyklad w Day6\exercises\pickle_1.py
-# # odczytaj plik i sprawdz czy poprawnie zapisano dane
-#
-# # 5 odczytaj plik article.txt w calosci - plik umieszczony w Day5\exercises\article.txt
-# # pozwol uzytkownikowi na podanie slowa i policz ile razy dane slowo wystepuje w artykule
-# # (powiedz uzytkownikowi ile razy wystepuje)
-#
-# # 6 utwórz program, w ktorym uzytkownik bedzie mogl powiekszac baze slow slangu miejskiego
-# # na poczatku programu zaladuj slownik z pliku pickle
-# # (sprawdz czy plik istnieje, albo po wykonaniu zadania 4 uzyj istniejacego pliku)
-# # napisz program tak, aby uzytkownik mogl dodawac slowa i ich wyjasnienie, dopoki nie zechce wyjsc z programu
-# # (moze byc krotkie pytanie czy chcesz dodac slowo do slownika? TAK/NIE)
-# # na koncu programu zapisz slownik ponownie do pliku pickle, aby zapisac zmiany
+# oraz:
+
+# 1 stwórz słownik, którego kluczem będą słowa, natomiast wartością znaczenie tych słów
+# może być słownik miejskiego slangu ;)
+
+
+
+# words_dict["kasiora"] = "Opis słowa kasiora"
+
+# 2 zapisz prosta zawartosc slownika miejskiego slangu do pliku, w kazdej linii klucz - wartosc
+# np kasiora - Opis slowa kasiora, w nowej linii nastepna para
+
+# 3 zapisz slownik slangu miejskiego do pliku csv, gdzie klucz (slowo) i wartosc (wyjasnienie slowa)
+# beda oddzielone pionową linią pipe (|) - przyklad zapisu pliku csv w Day6\exercises\cs_example
+
+# 4 zapisz slownik slangu miejskiego jako pickle - przyklad w Day6\exercises\pickle_1.py
+# odczytaj plik i sprawdz czy poprawnie zapisano dane
+
+# 5 odczytaj plik article.txt w calosci - plik umieszczony w Day5\exercises\article.txt
+# pozwol uzytkownikowi na podanie slowa i policz ile razy dane slowo wystepuje w artykule
+# (powiedz uzytkownikowi ile razy wystepuje)
+
+# 6 utwórz program, w ktorym uzytkownik bedzie mogl powiekszac baze slow slangu miejskiego
+# na poczatku programu zaladuj slownik z pliku pickle
+# (sprawdz czy plik istnieje, albo po wykonaniu zadania 4 uzyj istniejacego pliku)
+# napisz program tak, aby uzytkownik mogl dodawac slowa i ich wyjasnienie, dopoki nie zechce wyjsc z programu
+# (moze byc krotkie pytanie czy chcesz dodac slowo do slownika? TAK/NIE)
+# na koncu programu zapisz slownik ponownie do pliku pickle, aby zapisac zmiany
