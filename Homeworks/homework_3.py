@@ -177,16 +177,28 @@
 
 # 1 stwórz słownik, którego kluczem będą słowa, natomiast wartością znaczenie tych słów
 # może być słownik miejskiego slangu ;)
-
-
-
 # words_dict["kasiora"] = "Opis słowa kasiora"
+
+# slownik_slangu={'siano':'kasa','fura':'samochod','rejon':'okolica','szlugi':'papierosy'}
+# #print(slownik_slangu)
+
 
 # 2 zapisz prosta zawartosc slownika miejskiego slangu do pliku, w kazdej linii klucz - wartosc
 # np kasiora - Opis slowa kasiora, w nowej linii nastepna para
 
+# slownik_slangu={'siano':'kasa','fura':'samochod','rejon':'okolica','szlugi':'papierosy'}
+#
+# with open("slownik_slangu.txt", 'w') as plik_slang:
+#     for slowo, znaczenie in slownik_slangu.items():
+#         plik_slang.write(f'Slowo {slowo} znaczy {znaczenie} \n')
+
+
 # 3 zapisz slownik slangu miejskiego do pliku csv, gdzie klucz (slowo) i wartosc (wyjasnienie slowa)
 # beda oddzielone pionową linią pipe (|) - przyklad zapisu pliku csv w Day6\exercises\cs_example
+
+
+
+
 
 # 4 zapisz slownik slangu miejskiego jako pickle - przyklad w Day6\exercises\pickle_1.py
 # odczytaj plik i sprawdz czy poprawnie zapisano dane
