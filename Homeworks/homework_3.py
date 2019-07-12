@@ -133,28 +133,28 @@ for liczba in zakres:
 # 0, 1, 1, 2, 3, 5, 8, 13, 21
 # propozycja uzycia petli while - ale kazde rozwiazanie jest dobre ;)
 
-
-# liczba = range(0, 101)
-
-liczba = 0
-
-
-# while liczba in range(0,101):
-if liczba == 0:
-    print(0)
-    liczba+=1
-elif liczba==1:
-    print(1)
-    suma=
-while liczba in range(0, 101):
-    print(f"liczba {liczba}")
-    poprzednia_liczba=liczba
-    print(f"poprzednia liczba {poprzednia_liczba}")
-    suma=liczba+poprzednia_liczba
-    print(f"suma {suma}")
-
-    # print(f"poprzednia liczba {poprzednia_liczba}")
-
+#
+# # liczba = range(0, 101)
+#
+# liczba = 0
+#
+#
+# # while liczba in range(0,101):
+# if liczba == 0:
+#     print(0)
+#     liczba+=1
+# elif liczba==1:
+#     print(1)
+#     suma=
+# while liczba in range(0, 101):
+#     print(f"liczba {liczba}")
+#     poprzednia_liczba=liczba
+#     print(f"poprzednia liczba {poprzednia_liczba}")
+#     suma=liczba+poprzednia_liczba
+#     print(f"suma {suma}")
+#
+#     # print(f"poprzednia liczba {poprzednia_liczba}")
+#
 
 
 #Trainings/8_func_1.py
