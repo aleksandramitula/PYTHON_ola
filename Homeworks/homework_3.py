@@ -132,29 +132,57 @@ for liczba in zakres:
 # program, ktory wypisze liczby (z zakresu 0 do 100) z ciagu Fibonacciego
 # 0, 1, 1, 2, 3, 5, 8, 13, 21
 # propozycja uzycia petli while - ale kazde rozwiazanie jest dobre ;)
-
 #
-# # liczba = range(0, 101)
+# suma=0
+# n=0
+# while suma <= 100:
+#     if n <= 2:
+#         wynik=1
+#         n=n+1
+#         if n>2:
+#             wynik=wynik(n-1)+wynik(n-2)
+#             n=n+1
 #
-# liczba = 0
+#     print(wynik)
+#     # for liczba in range(1000):
+#     #     poprzednia_liczba=liczba
+#     #     suma=poprzednia_liczba+liczba
 #
 #
-# # while liczba in range(0,101):
-# if liczba == 0:
-#     print(0)
-#     liczba+=1
-# elif liczba==1:
-#     print(1)
-#     suma=
-# while liczba in range(0, 101):
-#     print(f"liczba {liczba}")
-#     poprzednia_liczba=liczba
-#     print(f"poprzednia liczba {poprzednia_liczba}")
-#     suma=liczba+poprzednia_liczba
-#     print(f"suma {suma}")
 #
-#     # print(f"poprzednia liczba {poprzednia_liczba}")
+# # int
+# # fib(int
+# # n)
+# # {
+# # if (n < 3)
+# # return 1;
+# #
+# # return fib(n - 2) + fib(n - 1);
 #
+#
+#
+# #
+# # # liczba = range(0, 101)
+# #
+# # liczba = 0
+# #
+# #
+# # # while liczba in range(0,101):
+# # if liczba == 0:
+# #     print(0)
+# #     liczba+=1
+# # elif liczba==1:
+# #     print(1)
+# #     suma=
+# # while liczba in range(0, 101):
+# #     print(f"liczba {liczba}")
+# #     poprzednia_liczba=liczba
+# #     print(f"poprzednia liczba {poprzednia_liczba}")
+# #     suma=liczba+poprzednia_liczba
+# #     print(f"suma {suma}")
+# #
+# #     # print(f"poprzednia liczba {poprzednia_liczba}")
+# #
 
 
 #Trainings/8_func_1.py
@@ -253,3 +281,21 @@ print(f"Slowo {slowo} wystepuje w tekscie {wystapienia} razy.")
 # napisz program tak, aby uzytkownik mogl dodawac slowa i ich wyjasnienie, dopoki nie zechce wyjsc z programu
 # (moze byc krotkie pytanie czy chcesz dodac slowo do slownika? TAK/NIE)
 # na koncu programu zapisz slownik ponownie do pliku pickle, aby zapisac zmiany
+
+
+import pickle
+kont="tak"
+with open("slang.pckl", "rb") as plik_pickle:
+    odczytany_plik = pickle.load(plik_pickle)
+    while kont == "tak":
+        klucz=input("Wprowadz slowo ze slangu: ")
+        wartosc=input("Wprowadz wyjasnienie slowa: ")
+        odczytany_plik[klucz] = wartosc
+        kont=input("Czy chcesz dodac kolejne slowo (tak/nie)?")
+
+# print(odczytany_plik)
+
+with open("slang.pckl", 'wb') as plik_pickle_wynik:
+    pickle.dump(odczytany_plik, plik_pickle_wynik)
+
+# print(odczytany_plik)
