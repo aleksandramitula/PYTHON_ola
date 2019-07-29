@@ -28,6 +28,9 @@ class Bike(object):
         """use bicycle bell"""
         print(f"Ring ring ring!")
 
+
+
+# zadanie dodatkowe - nadpisac wartosc printa (https://www.quora.com/What-is-the-use-of-__str__-in-python)
     # def ___str___(self):
     #     print()
 
@@ -43,3 +46,13 @@ class Frame(object):
         self.color = color
         self.geometry = geometry
 
+
+
+# DZIEDZICZENIE - wyspecjalizowany obiekt, ktory zawiera to samo co BIKE, i jeszcze wiecej:
+# zamiast (object) wpisujemy w nawiasie nazwe clasy, ktora rozszerzamy:
+
+class ElectricBike(Bike):
+    def increase_motor_power(self):
+        print("Motor power increased!")
+    def ring(self):
+        print("Electric bike does not ring!")
