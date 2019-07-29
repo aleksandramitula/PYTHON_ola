@@ -78,7 +78,7 @@ msg['Subject'] = 'The contents of ' + textfile
 #nadawca
 msg['From'] = 'isapy@o2.pl'
 #odbiorca
-msg['To'] = 'olamitolamit@gmail.com'
+msg['To'] = 'mail@gmail.com'
 
 #tworzymy obiekt dzięki któremy wyślemy wiadomość
 #w konstruktorze podajemy adres serwera dzięki któremy będziemy wysyłać wiadomość
