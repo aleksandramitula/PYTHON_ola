@@ -4,19 +4,17 @@
 
 class Employee(object):
     """Creates new employee"""
-    def __init__(self, imie, nazwisko):
+
+    def __init__(self, salary, imie, nazwisko = "Kowalski"):
         self.name = imie
         self.surname = nazwisko
-    # dodanie nowej wlasciwosci:
+        self.salary = salary
+
     def say_hello(self):
         """saying hello"""
         print(f"Hello, my name is {self.name} {self.surname}")
 
+    def increase_salary(self, percentage):
+        """increase salary"""
+        self.salary = (1 + percentage/100) * self.salary
 
-
-# INSTANCJA OBIEKTU, wykonanie projektu. Najczesciej to jest w osobnym pliku umieszczone:
-# zeby wywolac ja w innym pliku, to nalezy wywolac jak funkcje (from Dzien9.modules.Employee import Employee)
-
-new_employee = Employee("Mateusz", "Cebula")
-another_new_employee = Employee("Jan", "Kowalski")
-another_new_employee.say_hello()
