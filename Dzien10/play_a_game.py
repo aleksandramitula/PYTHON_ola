@@ -6,6 +6,8 @@ barbarian = Barbarian()
 
 how_many_attacks = 5
 
+print(player)
+
 for number_of_attacks in range(how_many_attacks):
     if player.character_state == 'Dead':
         break

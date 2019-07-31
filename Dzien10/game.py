@@ -16,6 +16,11 @@ class Character(object):
         self.armor = armor
         self.character_state = 'Alive'
 
+
+    def __str__(self):
+        return f"I'm game character and my strength is {self.strength}"
+
+
     def attack(self, target_character):
         target_character.defend(self.damage)
         print(f"This is method from {self.__class__.__name__}")
