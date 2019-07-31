@@ -51,47 +51,110 @@ map.save('map.html')
 
 
 # 5) wyslanie na maila:
+# # TA CZESC NIE DZIALA!!
+#
+# import smtplib #pozwala logowac sie i wysylac maile
+# from email.mime.text import MIMEText
+# from email.mime.multipart import MIMEMultipart #nasza wiadomosc bedzie sie skladala z tekstu oraz zalacznikow
+#
+# #tworzymy obiekt MIMEMultipart, który za nas dokona odpowiedniego utworzenia źródła maila do wysłania
+# msg = MIMEMultipart()
+#
+# #otwieramy plik którego zawartość chcemy wysłać jako treść maila
+# textfile = 'airports.csv'
+# map = 'map.html'
+# with open(textfile, 'r') as fp:
+#     #tworzymy obiekt MIMEText w paramatrze podając zawartość pliku
+#     #jest to obiekt odpowiadający za treść maila
+#     text = MIMEText(fp.read())
+#
+# #dołączamy treść maila do naszej wiadomości
+# msg.attach(text)
+# msg.attach(map)
+#
+# #ustawiamy nagłówki niezbędne do poprawnej wysyłki maila
+# #temat
+# msg['Subject'] = 'The contents of ' + textfile
+# #nadawca
+# msg['From'] = 'isapy@o2.pl'
+# #odbiorca
+# msg['To'] = 'mail@gmail.com'
+#
+# #tworzymy obiekt dzięki któremy wyślemy wiadomość
+# #w konstruktorze podajemy adres serwera dzięki któremy będziemy wysyłać wiadomość
+# s = smtplib.SMTP('poczta.o2.pl')
+#
+# #podany serwer wymaga uwierzytelnienia więc wywołujemy metodę do logowania
+# s.login('isapy@o2.pl', 'isapython')
+#
+# #wywłamy wiadomość, moetoda msg.as_string() zamienia obiekt MIMEMultipart ze wszystkim załącznikami
+# #na wiadomość zgodną z RFC do wysłania wiadomośći
+# s.sendmail(msg['From'], [msg['To']], msg.as_string())
+#
+# #zamykamy nasze połaczenie z serwerem
+# #analogicznie do otwierania plików można użyć tutaj konstrukcji with-as
+# #dzięki czemu s.quit() wykona się samo po wyjściu z bloku with i nie trzeba tej metody jawnie wykonywać
+# s.quit()
+#
 
 
-import smtplib #pozwala logowac sie i wysylac maile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import smtplib, ssl
 from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart #nasza wiadomosc bedzie sie skladala z tekstu oraz zalacznikow
+from email.mime.multipart import MIMEMultipart
 
-#tworzymy obiekt MIMEMultipart, który za nas dokona odpowiedniego utworzenia źródła maila do wysłania
-msg = MIMEMultipart()
+sender_email = "isa12python@gmail.com"
+receiver_email = "olamitolamit@gmail.com"
+password = "iSAforever"
 
-#otwieramy plik którego zawartość chcemy wysłać jako treść maila
-textfile = 'airports.csv'
-map = 'map.html'
-with open(textfile, 'r') as fp:
-    #tworzymy obiekt MIMEText w paramatrze podając zawartość pliku
-    #jest to obiekt odpowiadający za treść maila
-    text = MIMEText(fp.read())
+message = MIMEMultipart("alternative")
+message["Subject"] = "multipart test"
+message["From"] = sender_email
+message["To"] = receiver_email
 
-#dołączamy treść maila do naszej wiadomości
-msg.attach(text)
-msg.attach(map)
+text = """\
+Hi,
+How are you?
+Real Python has many great tutorials:
+www.realpython.com"""
+html = """\
+<html>
+  <body>
+    <p>Hi,<br>
+       How are you?<br>
+       <a href="https://infoshareacademy.com">InfoShare Academy</a> 
+       has many great courses.
+    </p>
+  </body>
+</html>
+"""
 
-#ustawiamy nagłówki niezbędne do poprawnej wysyłki maila
-#temat
-msg['Subject'] = 'The contents of ' + textfile
-#nadawca
-msg['From'] = 'isapy@o2.pl'
-#odbiorca
-msg['To'] = 'mail@gmail.com'
+part1 = MIMEText(text, "plain")
+part2 = MIMEText(html, "html")
 
-#tworzymy obiekt dzięki któremy wyślemy wiadomość
-#w konstruktorze podajemy adres serwera dzięki któremy będziemy wysyłać wiadomość
-s = smtplib.SMTP('poczta.o2.pl')
+# dodaj dwie reprezentacje wiadomosci - najpierw tryb HTML, potem zwykly tekst
+message.attach(part1)
+message.attach(part2)
 
-#podany serwer wymaga uwierzytelnienia więc wywołujemy metodę do logowania
-s.login('isapy@o2.pl', 'isapython')
+# Create secure connection with server and send email
+context = ssl.create_default_context()
+server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 
-#wywłamy wiadomość, moetoda msg.as_string() zamienia obiekt MIMEMultipart ze wszystkim załącznikami
-#na wiadomość zgodną z RFC do wysłania wiadomośći
-s.sendmail(msg['From'], [msg['To']], msg.as_string())
-
-#zamykamy nasze połaczenie z serwerem
-#analogicznie do otwierania plików można użyć tutaj konstrukcji with-as
-#dzięki czemu s.quit() wykona się samo po wyjściu z bloku with i nie trzeba tej metody jawnie wykonywać
-s.quit()
+server.login(sender_email, password)
+server.sendmail(
+    sender_email, receiver_email, message.as_string()
+)
