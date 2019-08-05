@@ -1,4 +1,4 @@
-from Dzien10.game import Character, Barbarian
+from Dzien10.game import Character, Barbarian, Dice
 
 player = Character(20)              # domyslne wartosci: (self, health = 10, strength = 5, damage = 2, armor = 5) - podwyzszamy health do 20
 enemy = Character()                 # domyslne wartosci: (self, health = 10, strength = 5, damage = 2, armor = 5)
@@ -19,4 +19,7 @@ barbarian.attack(player)
 print(f"Player has armor: {player.armor} and health: {player.health}")
 
 
+##################################################################################################################
+game=Dice()
 
+print(f"Rolled with number: {game.roll()}")
