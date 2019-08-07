@@ -45,7 +45,6 @@ class CardDeck():
         return string_to_return
 
 
-
     # #alternatywa:
     # def show_all_the_cards(self):
     #     return "\n".join([str(x) for x in self.__deck])
@@ -53,9 +52,9 @@ class CardDeck():
 
 deck_of_cards = CardDeck()
 print(deck_of_cards.cards_count())
-# print(deck_of_cards.show_all_the_cards()) # w kolejnosci, niepotasowane
+# print(deck_of_cards.show_all_the_cards())     # w kolejnosci, niepotasowane
 deck_of_cards.shuffle()
-print(deck_of_cards.show_all_the_cards()) # potasowane
+print(deck_of_cards.show_all_the_cards())       # potasowane
 
 
 number_of_cards = 5
@@ -66,7 +65,6 @@ for i in range(5):
 
 for card in card_hand:
     print(card)
-
 
 
 
