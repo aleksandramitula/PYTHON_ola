@@ -4,7 +4,7 @@ import requests
 
 response = requests.get('http://www.recipepuppy.com/api/',params = {'i': 'onions,garlic', 'q': 'omelet', 'p':'1'})
 
-#onions,garlic
+# params = {'i': 'tomato'}      # parameters sa opcjonalne, mozna wpisac np. tylko 'i'
 
 
 print(response.status_code)
