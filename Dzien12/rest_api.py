@@ -14,4 +14,4 @@ for recipe in recipes:
     print()             # end of line (can be also e.g. "\n")
     print(recipe['title'])
     print(recipe['ingredients'])
-    print(recipe['thumbnail'])
+    #print(recipe['thumbnail'])
